@@ -4,10 +4,14 @@
     <title>Traductor</title>
 </head>
 <body>
-    
-    <h1>Traductor simple</h1>
+    <div style="color: blue; padding-top: 5%; text-align: center">
+        <h1>Traductor simple</h1>
+    </div>
+    <div style="text-align: center">
     <form method="POST">
         <input type="text" name="text" placeholder="Introduce el texto aquí" required>
+        <p>Indique el lenguaje al que desea traducir:</p>
+        <br>
         <select name="language">
             <option value="en">Inglés</option>
             <option value="es">Español</option>
@@ -17,15 +21,17 @@
         </select>
         <input type="submit" value="Traducir">
     </form>
-
+    </div>
+    <div style="text-align: center">
     {% if translated_text %}
-    <h2>Texto traducido:</h2>
+    <h3>Texto traducido:</h3>
     <p>{{ translated_text }}</p>
     {% endif %}
 
     {% if lang_detected %}
-    <h2>Idioma de entrada detectado:</h2>
+    <h3>Idioma de entrada detectado:</h3>
     <p>{{ lang_detected }}</p>
     {% endif %}
+    </div>
 </body>
 </html>
